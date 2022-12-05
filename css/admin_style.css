@@ -1,0 +1,515 @@
+:root{
+    --main-color:#0acc14;
+    --orange:#f39c12;
+    --red:#e74c3c;
+    --black:#444;
+    --white:#fff;
+    --light-color:#777;
+    --light-bg:#f5f5f5;
+    --border:.2rem solid var(--black);
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+ 
+*{
+    font-family: 'Nunito', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+}
+ 
+*::selection{
+    background-color: var(--main-color);
+    color:var(--white);
+}
+ 
+::-webkit-scrollbar{
+    height: .5rem;
+    width: 1rem;
+}
+ 
+::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+ 
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+}
+ 
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+ 
+body{
+    background-color: var(--light-bg);
+    /* padding-bottom: 10rem; */
+}
+ 
+section{
+    padding:2rem;
+    max-width: 1200px;
+    margin:0 auto;
+}
+ 
+.heading{
+    font-size: 4rem;
+    color:var(--black);
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+ 
+.btn,
+.delete-btn,
+.option-btn{
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: .5rem;
+    padding:1rem 3rem;
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    color:var(--white);
+    cursor: pointer;
+    text-align: center;
+}
+ 
+.btn:hover,
+.delete-btn:hover,
+.option-btn:hover{
+    background-color: var(--black);
+}
+ 
+ .btn{
+    background-color: var(--main-color);
+}
+ 
+.option-btn{
+    background-color: var(--orange);
+}
+ 
+.delete-btn{
+    background-color: var(--red);
+}
+ 
+.flex-btn{
+    display: flex;
+    gap:1rem;
+}
+ /*estilos de las alertas*/
+.message{
+    position: sticky;
+    top:0;
+    max-width: 1200px;
+    margin:0 auto;
+    background-color: var(--light-bg);
+    padding:2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:1.5rem;
+    z-index: 1100;
+}
+ 
+.message span{
+    font-size: 2rem;
+    color:var(--black);
+}
+ 
+.message i{
+    cursor: pointer;
+    color:var(--red);
+    font-size: 2.5rem;
+}
+ 
+.message i:hover{
+    color:var(--black);
+}
+ 
+
+ 
+@keyframes fadeIn{
+    0%{
+       transform: translateY(1rem);
+    }
+}
+/*estilos de formulario de login*/
+.formulario-container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.formulario-container form{
+    padding:2rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    background-color: var(--white);
+    border-radius: .5rem;
+    width: 50rem;
+    border:var(--border);
+}
+ 
+.formulario-container form h3{
+    text-transform: uppercase;
+    color:var(--black);
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+ 
+.formulario-container form p{
+    font-size: 1.8rem;
+    color:var(--light-color);
+    margin-bottom: 1rem;
+    border-radius: .5rem;
+}
+ 
+.formulario-container form p span{
+    color:var(--main-color);
+}
+ 
+.formulario-container form .caja{
+    width: 100%;
+    margin:1rem 0;
+    border-radius: .5rem;
+    background-color: var(--light-bg);
+    padding:1.4rem;
+    font-size: 1.8rem;
+    color:var(--black);
+}
+ 
+.header{
+    position: sticky;
+    top:0; left:0; right:0;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    z-index: 1000;
+}
+ 
+.header .flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+ 
+.header .flex .logo{
+    font-size: 2.5rem;
+    color:var(--black);
+}
+ 
+.header .flex .logo span{
+    color:var(--main-color);
+}
+ 
+ .header .flex .navbar a{
+    margin:0 1rem;
+    font-size: 2rem;
+    color:var(--black);
+}
+ 
+.header .flex .navbar a:hover{
+    color:var(--main-color);
+    text-decoration: underline;
+}
+ 
+.header .flex .icons div{
+    margin-left: 1.7rem;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color:var(--black);
+}
+ 
+.header .flex .icons div:hover{
+    color:var(--main-color);
+}
+ 
+.header .flex .profile{
+    position: absolute;
+    top:120%; right:2rem;
+    background-color: var(--white);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    border:var(--border);
+    padding:2rem;
+    width: 30rem;
+    padding-top: 1.2rem;
+    display: none;
+    animation:fadeIn .2s linear;
+}
+ 
+.header .flex .profile.active{
+    display: inline-block;
+}
+ 
+.header .flex .profile p{
+    text-align: center;
+    color:var(--black);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+ 
+#menu-btn{
+    display: none;
+}
+ 
+.dashboard .caja-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    gap:1.5rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+ 
+.dashboard .caja-container .box{
+    padding:2rem;
+    text-align: center;
+    border:var(--border);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    background-color: var(--white);
+}
+ 
+.dashboard .caja-container .caja h3{
+    font-size: 2.7rem;
+    color:var(--black);
+}
+ 
+.dashboard .caja-container .caja h3 span{
+    font-size: 2rem;
+}
+ 
+.dashboard .caja-container .caja p{
+    padding:1.3rem;
+    border-radius: .5rem;
+    background-color: var(--light-bg);
+    font-size: 1.7rem;
+    color:var(--light-color);
+    margin:1rem 0;
+}
+
+/*estilos-añedir productos*/
+.añedir-productos form{
+    margin: 0 auto;
+    max-width: 70rem;
+    background-color:var(--white);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    padding: 2rem;
+
+
+} 
+.añedir-productos form .flex{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+}
+.añedir-productos form .flex .input-caja{
+   flex: 1 1 30rem;
+   
+
+}
+.añedir-productos form .flex .input-caja .caja{
+    width: 100%;
+    background-color:var(--light-bg) ;
+    border: var(--border);
+    padding:1.4rem ;
+    font-size: 1.4rem;
+    color: var(--black);
+    border-radius: .5rem;
+    margin-top: 1rem;
+}
+.añedir-productos form .flex .input-caja span{
+    font-size: 2rem;
+    color: var(--light-color);
+}
+.añedir-productos form .flex .input-caja textarea{
+    height: 7rem;
+    resize: none;
+}
+/*estilos para ver los productos*/
+.ver-productos .caja-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 33rem);
+    gap:1.5rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+.ver-productos .caja-container .caja{
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    border:var(--border);
+    padding:2rem;
+}
+.ver-productos .caja-container .caja img{
+    width: 100%;
+    height: 20rem;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+}
+.ver-productos .caja-container .caja .nombre{
+    font-size: 2rem;
+    color:var(--black);
+}
+ 
+.ver-productos .caja-container .caja .precio{
+    font-size: 2rem;
+    color:var(--main-color);
+    margin:.5rem 0;
+}
+ 
+.ver-productos .caja-container .caja .detalles{
+    font-size: 1.5rem;
+    color:var(--light-color);
+    line-height: 2;
+}
+.empty{
+    padding:1.5rem;
+    background-color: var(--white);
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    color:var(--red);
+    border-radius: .5rem;
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+/*Actualizar productos*/
+.actualizar-producto form{
+    margin: 0 auto;
+    max-width: 50rem;
+    background-color:var(--white);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    padding: 2rem;
+
+}
+.actualizar-producto form .imagen-container .imagen-main img{
+    height: 20rem;
+    width: 100%;
+    object-fit: contain;
+
+
+}
+.actualizar-producto form .imagen-container .sub-imagenes{
+    display: flex;
+    gap:1.5rem;
+    margin: 1rem 0;
+    justify-content: center;
+}
+.actualizar-producto form .imagen-container .sub-imagenes img{
+    height: 7rem;
+    width: 8rem;
+    object-fit: contain;
+    border: var(--border);
+    cursor: pointer;
+    padding: .5rem;
+    border-radius: .5rem;
+    transition: .2s linear;
+}
+.actualizar-producto form .imagen-container .sub-imagenes img:hover{
+    transform: scale(1.1);
+}
+.actualizar-producto form .caja{
+    width: 100%;
+    background-color:var(--light-bg) ;
+    border: var(--border);
+    padding:1.4rem ;
+    font-size: 1.4rem;
+    color: var(--black);
+    border-radius: .5rem;
+    margin: 1rem 0;
+
+}
+.actualizar-producto form textarea{
+    height: 15rem;
+    resize: none;
+}
+.actualizar-producto form  span{
+    font-size: 1.7rem;
+    color: var(--black);
+}
+ 
+
+
+
+
+
+
+
+
+/*adaptacion resoluciones*/
+
+@media(max-width:911px){
+    html{
+        font-size: 55%;
+        
+    }
+
+}
+@media(max-width:450px){
+    html{
+        font-size: 50%;
+        
+    }
+    .heading{
+        font-size: 3.5rem;
+    }
+  
+    .flex-btn{
+        flex-flow: column;
+        gap:0;
+    }
+  
+    .add-products .formulario textarea{
+        height:15rem;
+    }   
+  
+    .show-products .caja-container{
+        grid-template-columns: 1fr;
+    }
+  
+    .orders .caja-container{
+        grid-template-columns: 1fr;
+    }
+  
+    .accounts .caja-container{
+        grid-template-columns: 1fr;
+    }
+  
+    .contacts .caja-container{
+        grid-template-columns: 1fr;
+    }
+
+}
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+  
+    .header .flex .navbar{
+        position: absolute;
+        top:99%; left:0; right:0;
+        border-top: var(--border);
+        border-bottom: var(--border);
+        background-color: var(--white);
+        transition: .2s linear;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+  
+    .header .flex .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+  
+    .header .flex .navbar a{
+        display: block;
+        margin:2rem;
+    }
+}
